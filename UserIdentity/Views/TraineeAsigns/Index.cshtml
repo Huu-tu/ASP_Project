@@ -1,0 +1,45 @@
+﻿@model IEnumerable<UserIdentity.Models.TraineeAsign>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List Trainee Asigns</h2>
+
+@if (Roles.IsUserInRole(User.Identity.Name, "Staff"))
+{
+    <p class="btn btn-danger">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trainee.Name)
+        </th>
+        <th>
+            <p>Functions</p>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trainee.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TraineeAsignID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TraineeAsignID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TraineeAsignID })
+            </td>
+        </tr>
+    }
+
+</table>

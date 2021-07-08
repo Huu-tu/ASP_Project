@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<body>
+    <div id="wrapper">
+        <div class="overlay">
+        </div>
+        <ul class="nav sidebar-nav">
+            <li class="sidebar-brand">
+                @Html.ActionLink("FPT-NST-CM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </li>
+            <li>@Html.ActionLink("Manage information", "Details", "Trainers")</li>
+            <li>@Html.ActionLink("See All Courses", "Index", "Courses")</li>
+            <li>@Html.ActionLink("See All Topics", "Index", "Topics")</li>
+            <li>@Html.ActionLink("Terms", "Index", "Terms")</li>
+            <li>@Html.ActionLink("My Courses", "Index", "TrainerAsigns")</li>
+        </ul>
+
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+   
+</body>
+</html>

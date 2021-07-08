@@ -1,0 +1,64 @@
+﻿@model UserIdentity.Models.Course
+@model UserIdentity.Models.Session
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Course Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Term.TermID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Topic.TopicID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trainer.TrainerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sessions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Session.SessionID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<body>
+
+    <div id="wrapper">
+        <div class="overlay">
+        </div>
+        <ul class="nav sidebar-nav">
+            <li class="sidebar-brand">
+                @Html.ActionLink("FPT-NST-CM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </li>
+            <li>@Html.ActionLink("Manage Staffs", "Index", "Staffs")</li>
+            <li>@Html.ActionLink("Manage Trainers", "Index", "Trainers")</li>
+            <li>@Html.ActionLink("Manage Account", "_ExternalLoginsListPartial", "Account")</li>
+            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        </ul>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>
+

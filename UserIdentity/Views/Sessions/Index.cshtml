@@ -1,0 +1,51 @@
+﻿@model IEnumerable<UserIdentity.Models.Session>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List Sessions</h2>
+
+@if (Roles.IsUserInRole(User.Identity.Name, "Staff"))
+{
+    <p class="btn btn-danger">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            <p>Functions</p>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td class="btn btn-default">
+                @Html.ActionLink("Edit", "Edit", new { id = item.SessionID })
+
+
+            </td>
+            <td class="btn btn-success">
+                @Html.ActionLink("Details", "Details", new { id = item.SessionID })
+            </td>
+            <td class="btn btn-danger">
+                @Html.ActionLink("Delete", "Delete", new { id = item.SessionID })
+            </td>
+        </tr>
+    }
+
+</table>

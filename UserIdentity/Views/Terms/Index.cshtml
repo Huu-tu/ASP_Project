@@ -1,0 +1,56 @@
+﻿@model IEnumerable<UserIdentity.Models.Term>
+
+@{
+    ViewBag.Title = "Terms";
+}
+
+<h2>List Term</h2>
+
+@if(Roles.IsUserInRole(User.Identity.Name, "Staff"))
+    {
+<p class="btn btn-info">
+    @Html.ActionLink("Create New", "Create")
+</p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TermName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayFinish)
+        </th>
+        <th>
+            <p>Function</p>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayFinish)
+        </td>
+        <td class="btn btn-default">
+            @Html.ActionLink("Edit", "Edit", new { id=item.TermID }) 
+             
+            
+        </td>
+        <td class="btn btn-success">
+            @Html.ActionLink("Details", "Details", new { id = item.TermID })
+        </td>
+        <td class="btn btn-danger">
+            @Html.ActionLink("Delete", "Delete", new { id = item.TermID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,42 @@
+﻿@model UserIdentity.Models.Term
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Term</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TermName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayFinish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayFinish)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TermID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div id="wrapper">
+        <div class="overlay">
+        </div>
+        <ul class="nav sidebar-nav">
+            <li class="sidebar-brand">
+                @Html.ActionLink("FPT-NST-CM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </li>
+            <li>@Html.ActionLink("Manage Trainees", "Index", "Trainees")</li>
+            <li>@Html.ActionLink("Manage Trainers", "Index", "Trainers")</li>
+            <li>@Html.ActionLink("Manage Topics", "Index", "Topics")</li>
+            <li>@Html.ActionLink("Manage Terms", "Index", "Terms")</li>
+            <li>@Html.ActionLink("Manage Couses", "Index", "Courses")</li>
+            <li>@Html.ActionLink("Manage Sessions", "Index", "Sessions")</li>
+            <li>@Html.ActionLink("Manage Trainer Asigns", "Index", "TrainerAsigns")</li>
+            <li>@Html.ActionLink("Manage Trainee Asigns", "Index", "TraineeAsigns")</li>
+            <li>@Html.ActionLink("Infomation", "Index", "Staffs")</li>
+        </ul>
+       
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>

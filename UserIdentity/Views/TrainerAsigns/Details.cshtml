@@ -1,0 +1,42 @@
+﻿@model UserIdentity.Models.TrainerAsign
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TrainerAsign</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainerID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrainerAsignID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
